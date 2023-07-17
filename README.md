@@ -10,6 +10,8 @@ go get github.com/speakeasy-sdks/pezzah-test-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+
+
 ```go
 package main
 
@@ -17,6 +19,7 @@ import(
 	"context"
 	"log"
 	"TestAPI"
+	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 

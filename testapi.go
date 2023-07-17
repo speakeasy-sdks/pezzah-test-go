@@ -4,6 +4,7 @@ package testapi
 
 import (
 	"TestAPI/pkg/models/operations"
+	"TestAPI/pkg/models/sdkerrors"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/utils"
 	"bytes"
@@ -119,8 +120,8 @@ func New(opts ...SDKOption) *TestAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.0.0",
-			GenVersion:        "2.41.5",
+			SDKVersion:        "1.1.0",
+			GenVersion:        "2.66.0",
 		},
 	}
 	for _, opt := range opts {
@@ -192,6 +193,8 @@ func (s *TestAPI) GetArtists(ctx context.Context, request operations.GetArtistsR
 			}
 
 			res.GetArtists200ApplicationJSONObjects = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
 		switch {
@@ -202,6 +205,8 @@ func (s *TestAPI) GetArtists(ctx context.Context, request operations.GetArtistsR
 			}
 
 			res.GetArtists400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -257,6 +262,8 @@ func (s *TestAPI) GetArtistsUsername(ctx context.Context, request operations.Get
 			}
 
 			res.GetArtistsUsername200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
 		switch {
@@ -267,6 +274,8 @@ func (s *TestAPI) GetArtistsUsername(ctx context.Context, request operations.Get
 			}
 
 			res.GetArtistsUsername400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -330,6 +339,8 @@ func (s *TestAPI) PostArtists(ctx context.Context, request operations.PostArtist
 			}
 
 			res.PostArtists400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

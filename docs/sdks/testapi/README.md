@@ -23,6 +23,7 @@ import(
 	"context"
 	"log"
 	"TestAPI"
+	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
@@ -75,6 +76,7 @@ import(
 	"context"
 	"log"
 	"TestAPI"
+	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
@@ -126,6 +128,7 @@ import(
 	"context"
 	"log"
 	"TestAPI"
+	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
