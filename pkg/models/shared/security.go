@@ -6,3 +6,17 @@ type Security struct {
 	Password string `security:"scheme,type=http,subtype=basic,name=password"`
 	Username string `security:"scheme,type=http,subtype=basic,name=username"`
 }
+
+func (o *Security) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *Security) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}

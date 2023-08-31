@@ -10,9 +10,23 @@ type GetArtistsUsernameRequest struct {
 	Username string `pathParam:"style=simple,explode=false,name=username"`
 }
 
+func (o *GetArtistsUsernameRequest) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
 // GetArtistsUsername400ApplicationJSON - Invalid request
 type GetArtistsUsername400ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *GetArtistsUsername400ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // GetArtistsUsername200ApplicationJSON - Successfully returned an artist
@@ -20,6 +34,27 @@ type GetArtistsUsername200ApplicationJSON struct {
 	AlbumsRecorded *int64  `json:"albums_recorded,omitempty"`
 	ArtistGenre    *string `json:"artist_genre,omitempty"`
 	ArtistName     *string `json:"artist_name,omitempty"`
+}
+
+func (o *GetArtistsUsername200ApplicationJSON) GetAlbumsRecorded() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.AlbumsRecorded
+}
+
+func (o *GetArtistsUsername200ApplicationJSON) GetArtistGenre() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ArtistGenre
+}
+
+func (o *GetArtistsUsername200ApplicationJSON) GetArtistName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ArtistName
 }
 
 type GetArtistsUsernameResponse struct {
@@ -30,4 +65,39 @@ type GetArtistsUsernameResponse struct {
 	GetArtistsUsername200ApplicationJSONObject *GetArtistsUsername200ApplicationJSON
 	// Invalid request
 	GetArtistsUsername400ApplicationJSONObject *GetArtistsUsername400ApplicationJSON
+}
+
+func (o *GetArtistsUsernameResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetArtistsUsernameResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetArtistsUsernameResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetArtistsUsernameResponse) GetGetArtistsUsername200ApplicationJSONObject() *GetArtistsUsername200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetArtistsUsername200ApplicationJSONObject
+}
+
+func (o *GetArtistsUsernameResponse) GetGetArtistsUsername400ApplicationJSONObject() *GetArtistsUsername400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetArtistsUsername400ApplicationJSONObject
 }

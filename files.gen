@@ -32,3 +32,4 @@ docs/models/operations/postartistsrequestbody.md
 docs/models/operations/postartists400applicationjson.md
 docs/models/operations/postartistsresponse.md
 docs/models/shared/security.md
+.gitattributes
