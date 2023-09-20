@@ -24,8 +24,8 @@ import(
 )
 
 func main() {
-    s := testapi.New(
-        testapi.WithSecurity(shared.Security{
+    s := TestAPI.New(
+        TestAPI.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -33,8 +33,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: testapi.Int64(548814),
-        Offset: testapi.Int64(592845),
+        Limit: TestAPI.Int64(548814),
+        Offset: TestAPI.Int64(592845),
     })
     if err != nil {
         log.Fatal(err)

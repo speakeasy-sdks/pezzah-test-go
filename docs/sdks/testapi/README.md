@@ -28,8 +28,8 @@ import(
 )
 
 func main() {
-    s := testapi.New(
-        testapi.WithSecurity(shared.Security{
+    s := TestAPI.New(
+        TestAPI.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -37,8 +37,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: testapi.Int64(715190),
-        Offset: testapi.Int64(844266),
+        Limit: TestAPI.Int64(715190),
+        Offset: TestAPI.Int64(844266),
     })
     if err != nil {
         log.Fatal(err)
@@ -81,8 +81,8 @@ import(
 )
 
 func main() {
-    s := testapi.New(
-        testapi.WithSecurity(shared.Security{
+    s := TestAPI.New(
+        TestAPI.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -133,8 +133,8 @@ import(
 )
 
 func main() {
-    s := testapi.New(
-        testapi.WithSecurity(shared.Security{
+    s := TestAPI.New(
+        TestAPI.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -142,9 +142,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.PostArtists(ctx, operations.PostArtistsRequestBody{
-        AlbumsRecorded: testapi.Int64(423655),
-        ArtistGenre: testapi.String("error"),
-        ArtistName: testapi.String("deserunt"),
+        AlbumsRecorded: TestAPI.Int64(423655),
+        ArtistGenre: TestAPI.String("error"),
+        ArtistName: TestAPI.String("deserunt"),
         Username: "Gerda89",
     })
     if err != nil {
