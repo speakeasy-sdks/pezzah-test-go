@@ -7,14 +7,14 @@ package main
 import(
 	"context"
 	"log"
-	"TestAPI"
+	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
 func main() {
-    s := TestAPI.New(
-        TestAPI.WithSecurity(shared.Security{
+    s := testapi.New(
+        testapi.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -22,8 +22,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: TestAPI.Int64(548814),
-        Offset: TestAPI.Int64(592845),
+        Limit: testapi.Int64(548814),
+        Offset: testapi.Int64(592845),
     })
     if err != nil {
         log.Fatal(err)

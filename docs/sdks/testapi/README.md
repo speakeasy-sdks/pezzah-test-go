@@ -22,14 +22,14 @@ package main
 import(
 	"context"
 	"log"
-	"TestAPI"
+	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
 func main() {
-    s := TestAPI.New(
-        TestAPI.WithSecurity(shared.Security{
+    s := testapi.New(
+        testapi.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -37,8 +37,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: TestAPI.Int64(715190),
-        Offset: TestAPI.Int64(844266),
+        Limit: testapi.Int64(602763),
+        Offset: testapi.Int64(857946),
     })
     if err != nil {
         log.Fatal(err)
@@ -75,14 +75,14 @@ package main
 import(
 	"context"
 	"log"
-	"TestAPI"
+	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
 func main() {
-    s := TestAPI.New(
-        TestAPI.WithSecurity(shared.Security{
+    s := testapi.New(
+        testapi.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.GetArtistsUsername(ctx, operations.GetArtistsUsernameRequest{
-        Username: "Leda_Stiedemann",
+        Username: "Karley_Stamm",
     })
     if err != nil {
         log.Fatal(err)
@@ -127,14 +127,14 @@ package main
 import(
 	"context"
 	"log"
-	"TestAPI"
+	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
 func main() {
-    s := TestAPI.New(
-        TestAPI.WithSecurity(shared.Security{
+    s := testapi.New(
+        testapi.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -142,10 +142,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.PostArtists(ctx, operations.PostArtistsRequestBody{
-        AlbumsRecorded: TestAPI.Int64(423655),
-        ArtistGenre: TestAPI.String("error"),
-        ArtistName: TestAPI.String("deserunt"),
-        Username: "Gerda89",
+        AlbumsRecorded: testapi.Int64(645894),
+        ArtistGenre: testapi.String("suscipit"),
+        ArtistName: testapi.String("iure"),
+        Username: "Eli96",
     })
     if err != nil {
         log.Fatal(err)

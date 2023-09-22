@@ -10,22 +10,20 @@ go get github.com/speakeasy-sdks/pezzah-test-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
 import(
 	"context"
 	"log"
-	"TestAPI"
+	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
 	"TestAPI/pkg/models/operations"
 )
 
 func main() {
-    s := TestAPI.New(
-        TestAPI.WithSecurity(shared.Security{
+    s := testapi.New(
+        testapi.WithSecurity(shared.Security{
             Password: "",
             Username: "",
         }),
@@ -33,8 +31,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: TestAPI.Int64(548814),
-        Offset: TestAPI.Int64(592845),
+        Limit: testapi.Int64(715190),
+        Offset: testapi.Int64(844266),
     })
     if err != nil {
         log.Fatal(err)
@@ -56,6 +54,38 @@ func main() {
 * [GetArtistsUsername](docs/sdks/testapi/README.md#getartistsusername) - Obtain information about an artist from his or her unique username
 * [PostArtists](docs/sdks/testapi/README.md#postartists) - Lets a user post a new artist
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `nil`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
