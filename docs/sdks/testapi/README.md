@@ -1,5 +1,6 @@
 # TestAPI SDK
 
+
 ## Overview
 
 Simple API: A simple API to illustrate OpenAPI concepts
@@ -37,8 +38,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: testapi.Int64(602763),
-        Offset: testapi.Int64(857946),
+        Limit: testapi.Int64(919877),
+        Offset: testapi.Int64(481153),
     })
     if err != nil {
         log.Fatal(err)
@@ -90,7 +91,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.GetArtistsUsername(ctx, operations.GetArtistsUsernameRequest{
-        Username: "Karley_Stamm",
+        Username: "Marilyne.Hackett49",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,10 +143,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.PostArtists(ctx, operations.PostArtistsRequestBody{
-        AlbumsRecorded: testapi.Int64(645894),
-        ArtistGenre: testapi.String("suscipit"),
-        ArtistName: testapi.String("iure"),
-        Username: "Eli96",
+        AlbumsRecorded: testapi.Int64(208836),
+        ArtistGenre: testapi.String("Nigeria"),
+        ArtistName: testapi.String("unless to Chicken"),
+        Username: "Watson41",
     })
     if err != nil {
         log.Fatal(err)

@@ -58,8 +58,11 @@ func (o *GetArtistsUsername200ApplicationJSON) GetArtistName() *string {
 }
 
 type GetArtistsUsernameResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully returned an artist
 	GetArtistsUsername200ApplicationJSONObject *GetArtistsUsername200ApplicationJSON
