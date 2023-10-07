@@ -21,10 +21,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: testapi.Int64(919877),
-        Offset: testapi.Int64(481153),
-    })
+    res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
     if err != nil {
         log.Fatal(err)
     }

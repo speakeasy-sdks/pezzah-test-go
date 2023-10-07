@@ -37,10 +37,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{
-        Limit: testapi.Int64(919877),
-        Offset: testapi.Int64(481153),
-    })
+    res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -143,10 +140,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TestAPI.PostArtists(ctx, operations.PostArtistsRequestBody{
-        AlbumsRecorded: testapi.Int64(208836),
-        ArtistGenre: testapi.String("Nigeria"),
-        ArtistName: testapi.String("unless to Chicken"),
-        Username: "Watson41",
+        Username: "Cordie64",
     })
     if err != nil {
         log.Fatal(err)
