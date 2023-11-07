@@ -41,18 +41,6 @@ func (o *PostArtistsRequestBody) GetUsername() string {
 	return o.Username
 }
 
-// PostArtists400ApplicationJSON - Invalid request
-type PostArtists400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *PostArtists400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type PostArtistsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -60,8 +48,6 @@ type PostArtistsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Invalid request
-	PostArtists400ApplicationJSONObject *PostArtists400ApplicationJSON
 }
 
 func (o *PostArtistsResponse) GetContentType() string {
@@ -83,11 +69,4 @@ func (o *PostArtistsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *PostArtistsResponse) GetPostArtists400ApplicationJSONObject() *PostArtists400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostArtists400ApplicationJSONObject
 }

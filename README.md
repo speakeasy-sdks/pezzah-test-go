@@ -15,7 +15,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 go get github.com/speakeasy-sdks/pezzah-test-go
@@ -24,7 +24,60 @@ go get github.com/speakeasy-sdks/pezzah-test-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+```go
+package main
 
+import (
+	testapi "TestAPI"
+	"TestAPI/pkg/models/operations"
+	"TestAPI/pkg/models/shared"
+	"context"
+	"log"
+)
+
+func main() {
+	s := testapi.New(
+		testapi.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Classes != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End SDK Example Usage -->
+
+<!-- Start SDK Available Operations -->
+## Available Resources and Operations
+
+### [TestAPI SDK](docs/sdks/testapi/README.md)
+
+* [GetArtists](docs/sdks/testapi/README.md#getartists) - Returns a list of artists
+* [GetArtistsUsername](docs/sdks/testapi/README.md#getartistsusername) - Obtain information about an artist from his or her unique username
+* [PostArtists](docs/sdks/testapi/README.md#postartists) - Lets a user post a new artist
+<!-- End SDK Available Operations -->
+
+<!-- Start Dev Containers -->
+
+<!-- End Dev Containers -->
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+
+## Example
 
 ```go
 package main
@@ -46,41 +99,19 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
 	if err != nil {
-		log.Fatal(err)
-	}
 
-	if res.GetArtists200ApplicationJSONObjects != nil {
-		// handle response
+		var e *sdkerrors.GetArtistsResponseBody
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+
 	}
 }
 
 ```
-<!-- End SDK Example Usage -->
-
-<!-- Start SDK Available Operations -->
-# Available Resources and Operations
-
-## [TestAPI SDK](docs/sdks/testapi/README.md)
-
-* [GetArtists](docs/sdks/testapi/README.md#getartists) - Returns a list of artists
-* [GetArtistsUsername](docs/sdks/testapi/README.md#getartistsusername) - Obtain information about an artist from his or her unique username
-* [PostArtists](docs/sdks/testapi/README.md#postartists) - Lets a user post a new artist
-<!-- End SDK Available Operations -->
-
-<!-- Start Dev Containers -->
-
-
-
-<!-- End Dev Containers -->
-
-<!-- Start Error Handling -->
-# Error Handling
-
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
-
-
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -96,7 +127,6 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
@@ -110,20 +140,20 @@ import (
 
 func main() {
 	s := testapi.New(
+		testapi.WithServerIndex(0),
 		testapi.WithSecurity(shared.Security{
 			Password: "",
 			Username: "",
 		}),
-		testapi.WithServerIndex(0),
 	)
 
 	ctx := context.Background()
-	res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.GetArtists200ApplicationJSONObjects != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }
@@ -135,7 +165,6 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
@@ -149,20 +178,20 @@ import (
 
 func main() {
 	s := testapi.New(
+		testapi.WithServerURL("https://example.io/v1"),
 		testapi.WithSecurity(shared.Security{
 			Password: "",
 			Username: "",
 		}),
-		testapi.WithServerURL("https://example.io/v1"),
 	)
 
 	ctx := context.Background()
-	res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.GetArtists200ApplicationJSONObjects != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }
@@ -202,6 +231,56 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 <!-- Start Go Types -->
 
 <!-- End Go Types -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name       | Type       | Scheme     |
+| ---------- | ---------- | ---------- |
+| `Password` | http       | HTTP Basic |
+| `Username` | http       | HTTP Basic |
+
+You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```go
+package main
+
+import (
+	testapi "TestAPI"
+	"TestAPI/pkg/models/operations"
+	"TestAPI/pkg/models/shared"
+	"context"
+	"log"
+)
+
+func main() {
+	s := testapi.New(
+		testapi.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Classes != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -17,40 +17,28 @@ func (o *GetArtistsUsernameRequest) GetUsername() string {
 	return o.Username
 }
 
-// GetArtistsUsername400ApplicationJSON - Invalid request
-type GetArtistsUsername400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetArtistsUsername400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetArtistsUsername200ApplicationJSON - Successfully returned an artist
-type GetArtistsUsername200ApplicationJSON struct {
+// GetArtistsUsernameResponseBody - Successfully returned an artist
+type GetArtistsUsernameResponseBody struct {
 	AlbumsRecorded *int64  `json:"albums_recorded,omitempty"`
 	ArtistGenre    *string `json:"artist_genre,omitempty"`
 	ArtistName     *string `json:"artist_name,omitempty"`
 }
 
-func (o *GetArtistsUsername200ApplicationJSON) GetAlbumsRecorded() *int64 {
+func (o *GetArtistsUsernameResponseBody) GetAlbumsRecorded() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.AlbumsRecorded
 }
 
-func (o *GetArtistsUsername200ApplicationJSON) GetArtistGenre() *string {
+func (o *GetArtistsUsernameResponseBody) GetArtistGenre() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ArtistGenre
 }
 
-func (o *GetArtistsUsername200ApplicationJSON) GetArtistName() *string {
+func (o *GetArtistsUsernameResponseBody) GetArtistName() *string {
 	if o == nil {
 		return nil
 	}
@@ -58,16 +46,21 @@ func (o *GetArtistsUsername200ApplicationJSON) GetArtistName() *string {
 }
 
 type GetArtistsUsernameResponse struct {
+	// Successfully returned an artist
+	TwoHundredApplicationJSONObject *GetArtistsUsernameResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Successfully returned an artist
-	GetArtistsUsername200ApplicationJSONObject *GetArtistsUsername200ApplicationJSON
-	// Invalid request
-	GetArtistsUsername400ApplicationJSONObject *GetArtistsUsername400ApplicationJSON
+}
+
+func (o *GetArtistsUsernameResponse) GetTwoHundredApplicationJSONObject() *GetArtistsUsernameResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetArtistsUsernameResponse) GetContentType() string {
@@ -89,18 +82,4 @@ func (o *GetArtistsUsernameResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetArtistsUsernameResponse) GetGetArtistsUsername200ApplicationJSONObject() *GetArtistsUsername200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetArtistsUsername200ApplicationJSONObject
-}
-
-func (o *GetArtistsUsernameResponse) GetGetArtistsUsername400ApplicationJSONObject() *GetArtistsUsername400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetArtistsUsername400ApplicationJSONObject
 }

@@ -37,12 +37,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
+    res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.GetArtists200ApplicationJSONObjects != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -87,14 +87,14 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TestAPI.GetArtistsUsername(ctx, operations.GetArtistsUsernameRequest{
+    res, err := s.GetArtistsUsername(ctx, operations.GetArtistsUsernameRequest{
         Username: "Marilyne.Hackett49",
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.GetArtistsUsername200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -139,7 +139,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TestAPI.PostArtists(ctx, operations.PostArtistsRequestBody{
+    res, err := s.PostArtists(ctx, operations.PostArtistsRequestBody{
         Username: "Cordie64",
     })
     if err != nil {

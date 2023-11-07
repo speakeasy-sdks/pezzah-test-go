@@ -1,6 +1,4 @@
-# GetArtistsUsername200ApplicationJSON
-
-Successfully returned an artist
+# ResponseBody
 
 
 ## Fields
@@ -10,3 +8,4 @@ Successfully returned an artist
 | `AlbumsRecorded`   | **int64*           | :heavy_minus_sign: | N/A                |
 | `ArtistGenre`      | **string*          | :heavy_minus_sign: | N/A                |
 | `ArtistName`       | **string*          | :heavy_minus_sign: | N/A                |
+| `Username`         | *string*           | :heavy_check_mark: | N/A                |

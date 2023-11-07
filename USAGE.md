@@ -21,12 +21,12 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.TestAPI.GetArtists(ctx, operations.GetArtistsRequest{})
+	res, err := s.GetArtists(ctx, operations.GetArtistsRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.GetArtists200ApplicationJSONObjects != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }
