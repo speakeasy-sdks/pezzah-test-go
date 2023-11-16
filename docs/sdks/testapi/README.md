@@ -21,11 +21,11 @@ Returns a list of artists
 package main
 
 import(
-	"context"
-	"log"
-	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
+	testapi "TestAPI"
+	"context"
 	"TestAPI/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -74,11 +74,11 @@ Obtain information about an artist from his or her unique username
 package main
 
 import(
-	"context"
-	"log"
-	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
+	testapi "TestAPI"
+	"context"
 	"TestAPI/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -129,11 +129,12 @@ Lets a user post a new artist
 package main
 
 import(
-	"context"
-	"log"
-	testapi "TestAPI"
 	"TestAPI/pkg/models/shared"
+	testapi "TestAPI"
+	"context"
 	"TestAPI/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
