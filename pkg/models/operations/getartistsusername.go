@@ -46,21 +46,14 @@ func (o *GetArtistsUsernameResponseBody) GetArtistName() *string {
 }
 
 type GetArtistsUsernameResponse struct {
-	// Successfully returned an artist
-	TwoHundredApplicationJSONObject *GetArtistsUsernameResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetArtistsUsernameResponse) GetTwoHundredApplicationJSONObject() *GetArtistsUsernameResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// Successfully returned an artist
+	Object *GetArtistsUsernameResponseBody
 }
 
 func (o *GetArtistsUsernameResponse) GetContentType() string {
@@ -82,4 +75,11 @@ func (o *GetArtistsUsernameResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetArtistsUsernameResponse) GetObject() *GetArtistsUsernameResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

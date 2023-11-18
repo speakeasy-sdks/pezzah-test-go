@@ -39,3 +39,13 @@ Based on:
 - [go v0.2.2] .
 ### Releases
 - [Go v0.2.2] https://github.com/speakeasy-sdks/pezzah-test-go/releases/tag/v0.2.2 - .
+
+## 2023-11-18 01:08:23
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.121.1 (2.194.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.2.3] .
+### Releases
+- [Go v0.2.3] https://github.com/speakeasy-sdks/pezzah-test-go/releases/tag/v0.2.3 - .

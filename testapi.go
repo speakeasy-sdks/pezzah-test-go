@@ -144,9 +144,9 @@ func New(opts ...SDKOption) *TestAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.2.2",
-			GenVersion:        "2.192.1",
-			UserAgent:         "speakeasy-sdk/go 0.2.2 2.192.1 1.0.0 TestAPI",
+			SDKVersion:        "0.2.3",
+			GenVersion:        "2.194.1",
+			UserAgent:         "speakeasy-sdk/go 0.2.3 2.194.1 1.0.0 TestAPI",
 		},
 	}
 	for _, opt := range opts {
@@ -291,7 +291,7 @@ func (s *TestAPI) GetArtistsUsername(ctx context.Context, request operations.Get
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
