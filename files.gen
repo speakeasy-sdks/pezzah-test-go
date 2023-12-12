@@ -25,7 +25,6 @@ pkg/utils/utils.go
 /pkg/models/sdkerrors/getartistsusername.go
 /pkg/models/sdkerrors/postartists.go
 /pkg/models/shared/security.go
-USAGE.md
 docs/pkg/models/operations/getartistsrequest.md
 docs/pkg/models/operations/responsebody.md
 docs/pkg/models/operations/getartistsresponse.md
@@ -39,4 +38,5 @@ docs/pkg/models/sdkerrors/getartistsusernameresponsebody.md
 docs/pkg/models/sdkerrors/postartistsresponsebody.md
 docs/pkg/models/shared/security.md
 docs/sdks/testapi/README.md
+USAGE.md
 .gitattributes

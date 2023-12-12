@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```go
 package main
 
@@ -13,8 +13,8 @@ import (
 func main() {
 	s := testapi.New(
 		testapi.WithSecurity(shared.Security{
-			Password: "",
-			Username: "",
+			Password: "<YOUR_PASSWORD_HERE>",
+			Username: "<YOUR_USERNAME_HERE>",
 		}),
 	)
 
@@ -30,4 +30,4 @@ func main() {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

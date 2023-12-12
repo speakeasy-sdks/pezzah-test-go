@@ -31,8 +31,8 @@ import(
 func main() {
     s := testapi.New(
         testapi.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: "<YOUR_PASSWORD_HERE>",
+            Username: "<YOUR_USERNAME_HERE>",
         }),
     )
 
@@ -84,8 +84,8 @@ import(
 func main() {
     s := testapi.New(
         testapi.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: "<YOUR_PASSWORD_HERE>",
+            Username: "<YOUR_USERNAME_HERE>",
         }),
     )
 
@@ -140,8 +140,8 @@ import(
 func main() {
     s := testapi.New(
         testapi.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: "<YOUR_PASSWORD_HERE>",
+            Username: "<YOUR_USERNAME_HERE>",
         }),
     )
 
