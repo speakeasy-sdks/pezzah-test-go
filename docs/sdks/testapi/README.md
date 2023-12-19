@@ -62,7 +62,7 @@ func main() {
 | Error Object                     | Status Code                      | Content Type                     |
 | -------------------------------- | -------------------------------- | -------------------------------- |
 | sdkerrors.GetArtistsResponseBody | 400                              | application/json                 |
-| sdkerrors.SDKError               | 400-600                          | */*                              |
+| sdkerrors.SDKError               | 4xx-5xx                          | */*                              |
 
 ## GetArtistsUsername
 
@@ -117,7 +117,7 @@ func main() {
 | Error Object                             | Status Code                              | Content Type                             |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | sdkerrors.GetArtistsUsernameResponseBody | 400                                      | application/json                         |
-| sdkerrors.SDKError                       | 400-600                                  | */*                                      |
+| sdkerrors.SDKError                       | 4xx-5xx                                  | */*                                      |
 
 ## PostArtists
 
@@ -173,4 +173,4 @@ func main() {
 | Error Object                      | Status Code                       | Content Type                      |
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | sdkerrors.PostArtistsResponseBody | 400                               | application/json                  |
-| sdkerrors.SDKError                | 400-600                           | */*                               |
+| sdkerrors.SDKError                | 4xx-5xx                           | */*                               |
