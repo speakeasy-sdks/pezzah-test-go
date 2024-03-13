@@ -3,10 +3,10 @@ id: 8a489ea0-f304-44bf-99f9-c72b9c801d59
 management:
   docChecksum: c6c098df488669cb265a42f1fb00bb28
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.6.0
-  configChecksum: bea1f776a964e44e565d9ef300caf49a
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.6.1
+  configChecksum: 01bd0ce4cdfa99f144932ac491fba0ba
   repoURL: https://github.com/speakeasy-sdks/pezzah-test-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/pezzah-test-go
@@ -15,7 +15,7 @@ features:
   go:
     core: 3.4.4
     globalSecurity: 2.82.8
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
   - testapi.go
