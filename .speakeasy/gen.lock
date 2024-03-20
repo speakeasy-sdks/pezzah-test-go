@@ -1,0 +1,61 @@
+lockVersion: 2.0.0
+id: 8a489ea0-f304-44bf-99f9-c72b9c801d59
+management:
+  docChecksum: c6c098df488669cb265a42f1fb00bb28
+  docVersion: 1.0.0
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.6.2
+  configChecksum: 23975f68ee804e3c1acedbbf9ff331ef
+  repoURL: https://github.com/speakeasy-sdks/pezzah-test-go.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/pezzah-test-go
+  published: true
+features:
+  go:
+    core: 3.4.4
+    globalSecurity: 2.82.9
+    globalServerURLs: 2.82.2
+    responseFormat: 0.1.0
+generatedFiles:
+  - testapi.go
+  - go.mod
+  - pkg/models/sdkerrors/sdkerror.go
+  - pkg/types/bigint.go
+  - pkg/types/date.go
+  - pkg/types/datetime.go
+  - pkg/types/decimal.go
+  - pkg/types/pointers.go
+  - pkg/utils/contenttype.go
+  - pkg/utils/form.go
+  - pkg/utils/headers.go
+  - pkg/utils/json.go
+  - pkg/utils/pathparams.go
+  - pkg/utils/queryparams.go
+  - pkg/utils/requestbody.go
+  - pkg/utils/retries.go
+  - pkg/utils/security.go
+  - pkg/utils/utils.go
+  - /pkg/models/operations/getartists.go
+  - /pkg/models/operations/getartistsusername.go
+  - /pkg/models/operations/postartists.go
+  - /pkg/models/sdkerrors/getartists.go
+  - /pkg/models/sdkerrors/getartistsusername.go
+  - /pkg/models/sdkerrors/postartists.go
+  - /pkg/models/shared/security.go
+  - docs/pkg/models/operations/getartistsrequest.md
+  - docs/pkg/models/operations/responsebody.md
+  - docs/pkg/models/operations/getartistsresponse.md
+  - docs/pkg/models/operations/getartistsusernamerequest.md
+  - docs/pkg/models/operations/getartistsusernameresponsebody.md
+  - docs/pkg/models/operations/getartistsusernameresponse.md
+  - docs/pkg/models/operations/postartistsrequestbody.md
+  - docs/pkg/models/operations/postartistsresponse.md
+  - docs/pkg/models/sdkerrors/getartistsresponsebody.md
+  - docs/pkg/models/sdkerrors/getartistsusernameresponsebody.md
+  - docs/pkg/models/sdkerrors/postartistsresponsebody.md
+  - docs/pkg/models/shared/security.md
+  - docs/sdks/testapi/README.md
+  - USAGE.md
+  - .gitattributes
+  - internal/hooks/hooks.go
